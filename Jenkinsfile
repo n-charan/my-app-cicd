@@ -1,4 +1,4 @@
-pipeline {
+node {
   tools {
     maven 'my-maven' 
   }

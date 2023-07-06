@@ -1,1 +1,9 @@
-
+node {
+  stage('GIT Checkout') {
+      git branch:'main', url:'https://github.com/n-charan/my-app-cicd'
+  }
+  stage('Compile-Package') {
+      def mvnHome = tool name: 'maven-3.9.3', type: 'maven'
+      sh "${mvnHome}/bin/mvn package"
+  }
+}
